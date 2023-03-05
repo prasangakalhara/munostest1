@@ -63,4 +63,25 @@ buttons.forEach( button =>{
         faq.classList.toggle('show');
         icon.classList.toggle('rotate');
     })
-} )
+} );
+
+  // Get the mobile menu button and the mobile menu collapse element
+  var mobileMenuBtn = document.querySelector('.navbar-toggler');
+  var mobileMenuCollapse = document.querySelector('.navbar-collapse');
+
+  // Add a click event listener to the mobile menu button
+  mobileMenuBtn.addEventListener('click', function() {
+    // Toggle the 'show' class on the mobile menu collapse element
+    mobileMenuCollapse.classList.toggle('show');
+  });
+
+  // Get all the mobile menu links
+  var mobileMenuLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+  // Add a click event listener to each mobile menu link
+  mobileMenuLinks.forEach(function(link) {
+    link.addEventListener('click', function() {
+      // Remove the 'show' class from the mobile menu collapse element
+      mobileMenuCollapse.classList.remove('show');
+    });
+  });
